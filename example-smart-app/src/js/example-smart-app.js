@@ -31,14 +31,15 @@
                       }
                     }
                   });
-        
-        console.log(doc);
 
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv, doc).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, doc).done(function(patient, obv, doc) {
           console.log(patient);
           console.log(obv);
+          console.log('top');
+          console.log(doc);
+          console.log('bottom')
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
