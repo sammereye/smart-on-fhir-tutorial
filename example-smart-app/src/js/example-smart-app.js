@@ -52,6 +52,8 @@
           var ccda = byCodes('72232-2');
           
           console.log('meow')
+          console.log(docCodes)
+          console.log(doc)
           console.log(ccda)
           console.log('moo')
 
