@@ -37,10 +37,8 @@
         $.when(pt, obv, doc).done(function(patient, obv, doc) {
           console.log(patient);
           console.log(obv);
-          console.log('top');
-          console.log(doc);
-          console.log('bottom')
           var byCodes = smart.byCodes(obv, 'code');
+          var docCodes = smart.byCodes(doc, 'code');
           var gender = patient.gender;
 
           var fname = '';
@@ -50,6 +48,12 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
+          
+          var ccda = byCodes('72232-2');
+          
+          console.log('meow')
+          console.log(ccda)
+          console.log('moo')
 
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
