@@ -22,6 +22,17 @@
                       }
                     }
                   });
+        
+        var doc = smart.patient.api.fetchAll({
+                    type: 'DocumentReference',
+                    query: {
+                      code: {
+                        $or: ['http://loinc.org|72232-2']
+                      }
+                    }
+                  });
+        
+        console.log(doc);
 
         $.when(pt, obv).fail(onError);
 
