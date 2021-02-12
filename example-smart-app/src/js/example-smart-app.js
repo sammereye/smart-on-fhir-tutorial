@@ -24,13 +24,13 @@
                   });
         
         var doc = smart.patient.api.fetchAll({
-                    type: 'DocumentReference',
-                    query: {
-                      code: {
-                        $or: ['http://loinc.org|72232-2', 'http://loinc.org|81214-9',
-                              'http://loinc.org|7C34133-9']
-                      }
-                    }
+                    type: 'DocumentReference'
+//                     query: {
+//                       code: {
+//                         $or: ['http://loinc.org|72232-2', 'http://loinc.org|81214-9',
+//                               'http://loinc.org|7C34133-9']
+//                       }
+//                     }
                   });
 
         $.when(pt, obv, doc).fail(onError);
