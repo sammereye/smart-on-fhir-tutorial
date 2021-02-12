@@ -27,7 +27,8 @@
                     type: 'DocumentReference',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|72232-2', 'http://loinc.org|81214-9']
+                        $or: ['http://loinc.org|72232-2', 'http://loinc.org|81214-9',
+                              'http://loinc.org|7C34133-9']
                       }
                     }
                   });
@@ -50,14 +51,21 @@
           }
           
           var ccda = byCodes('72232-2');
-          var ccda2 = byCodes('81214-9')
+          var ccda2 = byCodes('81214-9');
+          var ccda3 = byCodes('7C34133-9')
           
-          console.log('meow')
-          console.log(docCodes)
-          console.log(doc)
-          console.log(ccda)
-          console.log(ccda2)
-          console.log('moo')
+          console.log('meow');
+          console.log(docCodes);
+          console.log(doc);
+          console.log(ccda);
+          console.log(ccda2);
+          console.log(ccda3);
+          console.log('moo');
+          
+          for (var i = 0; i < doc.length; i++) {
+            console.log(i);
+            console.log(doc[i]['content'][0]['attachment']['contentType']);
+          }
 
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
