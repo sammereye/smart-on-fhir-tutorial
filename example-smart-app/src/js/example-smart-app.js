@@ -27,7 +27,7 @@
                     type: 'DocumentReference',
                     query: {
                       code: {
-                        $or: ['http://loinc.org|72232-2']
+                        $or: ['http://loinc.org|72232-2', 'http://loinc.org|81214-9']
                       }
                     }
                   });
@@ -50,11 +50,13 @@
           }
           
           var ccda = byCodes('72232-2');
+          var ccda2 = byCodes('81214-9')
           
           console.log('meow')
           console.log(docCodes)
           console.log(doc)
           console.log(ccda)
+          console.log(ccda2)
           console.log('moo')
 
           var height = byCodes('8302-2');
